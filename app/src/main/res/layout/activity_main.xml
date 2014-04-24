@@ -8,22 +8,6 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.pixelpoesie.left_right.app.MainActivity">
 
-    <ToggleButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New ToggleButton"
-        android:id="@+id/toggleButton"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="182dp" />
-
-    <SeekBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/seekBar"
-        android:layout_below="@+id/toggleButton"
-        android:layout_marginTop="37dp" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,7 +18,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:clickable="true"
-        android:onClick="setText" />
+        android:onClick="setTextLeft" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -44,62 +28,9 @@
         android:id="@+id/textViewRight"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <SeekBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/seekBar2"
-        android:layout_above="@+id/toggleButton"
-        android:layout_toRightOf="@+id/seekBar"
-        android:layout_toLeftOf="@+id/textViewRight" />
-
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/switch1"
-        android:layout_above="@+id/seekBar2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="56dp"
-        android:singleLine="false" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Left_radio"
-        android:id="@+id/radioButton"
-        android:layout_marginBottom="39dp"
-        android:layout_above="@+id/switch1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Right_radio"
-        android:id="@+id/radioButton2"
-        android:layout_alignBottom="@+id/radioButton"
-        android:layout_alignRight="@+id/textViewRight"
-        android:layout_alignEnd="@+id/textViewRight" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="-"
-        android:id="@+id/button"
-        android:layout_marginTop="82dp"
-        android:layout_below="@+id/seekBar2"
-        android:layout_toLeftOf="@+id/toggleButton" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+"
-        android:id="@+id/button2"
-        android:layout_alignTop="@+id/button"
-        android:layout_toRightOf="@+id/toggleButton" />
+        android:layout_alignParentEnd="true"
+        android:onClick="setTextRight"
+        android:clickable="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -108,6 +39,80 @@
         android:text="@string/finalText"
         android:id="@+id/finalText"
         android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switchLR"
+        android:checked="true"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"
+        android:layout_toRightOf="@+id/textViewLeft"
+        android:layout_toLeftOf="@+id/textViewRight"
+        android:layout_alignParentBottom="false"
+        android:paddingTop="30dp"
+        android:layout_below="@+id/textViewRight" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:id="@+id/button"
+        android:layout_marginTop="51dp"
+        android:layout_below="@+id/switchLR"
+        android:layout_alignRight="@+id/switchLR"
+        android:layout_alignEnd="@+id/switchLR" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:id="@+id/button2"
+        android:layout_alignTop="@+id/button"
+        android:layout_alignLeft="@+id/switchLR"
+        android:layout_alignStart="@+id/switchLR" />
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="false"
+        android:layout_below="@+id/seekBar"
+        android:layout_alignParentTop="false"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_alignParentRight="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_above="@+id/switchLR"
+        android:layout_alignParentEnd="false">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Left"
+            android:id="@+id/radioButton"
+            android:onClick="setTextLeft"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Right"
+            android:id="@+id/radioButton2"
+            android:checked="false" />
+    </RadioGroup>
 
 </RelativeLayout>
