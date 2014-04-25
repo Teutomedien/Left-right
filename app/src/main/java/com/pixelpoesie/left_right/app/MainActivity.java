@@ -2,6 +2,7 @@ package com.pixelpoesie.left_right.app;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.*;
@@ -55,12 +56,29 @@ public class MainActivity extends ActionBarActivity {
         TextView tv = (TextView)findViewById(R.id.finalText);
         tv.setText("Left");
     }
+
     public void setTextRight(View v){
 
         TextView tv = (TextView)findViewById(R.id.finalText);
         tv.setText("Right");
     }
 
+    public void increaseText(View v){
+
+        TextView tv = (TextView)findViewById(R.id.finalText);
+
+        float currentTextSize = tv.getTextSize();
+        tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, currentTextSize + 1);
+       // tv.setText(String.valueOf(currentTextSize));
+    }
+    public void decreaseText(View v){
+
+        TextView tv = (TextView)findViewById(R.id.finalText);
+
+        float currentTextSize = tv.getTextSize();
+        tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, currentTextSize - 1);
+        // tv.setText(String.valueOf(currentTextSize));
+    }
 
 
 
