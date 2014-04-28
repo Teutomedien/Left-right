@@ -9,6 +9,7 @@ import android.view.*;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.SeekBar;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -30,8 +31,39 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         });
+        final LFmodule left_right = new LFmodule();
 
+        SeekBar seekBar = (SeekBar)findViewById(R.id.seekBar);
+
+        //Seekbar Value and Progress Textfields
+        final TextView seekBarValue = (TextView)findViewById(R.id.finalText);
+        final TextView seekBarProgress = (TextView)findViewById(R.id.seekProgress);
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                // TODO Auto-generated method stub
+
+                seekBarValue.setText(String.valueOf(left_right.getResult(progress)));
+
+                seekBarProgress.setText(String.valueOf(progress));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+        });
     }
+
+
 
 
     @Override

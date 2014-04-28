@@ -72,7 +72,8 @@
             android:layout_toLeftOf="@+id/textViewRight"
             android:layout_alignParentBottom="false"
             android:layout_below="@+id/textViewRight"
-            android:layout_weight="0.58" />
+            android:layout_weight="0.58"
+            android:progress="50" />
     </LinearLayout>
 
     <LinearLayout
@@ -164,6 +165,21 @@
             android:layout_alignParentStart="true"
             android:gravity="center"
             android:textSize="40dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Small Text"
+            android:id="@+id/seekProgress"
+            android:gravity="center" />
     </LinearLayout>
 
 </LinearLayout>

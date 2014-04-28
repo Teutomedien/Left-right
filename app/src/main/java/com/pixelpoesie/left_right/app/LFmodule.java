@@ -7,18 +7,18 @@ public class LFmodule {
 
     public String result;
 
-    public String setValue(int value) {
+    public String getResult(int value) {
 
         // -------------------------------------------------------- left
-        if (value < 0.5) {
+        if (value < 50) {
 
-            if (value < 0.1) {
+            if (value < 10) {
                 result = "Left";
-            } else if (value < 0.2) {
+            } else if (value < 20) {
                 result = "Lef";
-            } else if (value < 0.3) {
+            } else if (value < 30) {
                 result = "Le";
-            } else if (value < 0.4) {
+            } else if (value < 40) {
                 result = "L";
             } else {
                 result = "L";
@@ -26,13 +26,13 @@ public class LFmodule {
 
         } else { // ---------------------------------------------- right
 
-            if (value < 0.6) {
+            if (value < 60) {
                 result = "";
-            } else if (value < 0.7) {
+            } else if (value < 70) {
                 result = "R";
-            } else if (value < 0.8) {
+            } else if (value < 80) {
                 result = "Ri";
-            } else if (value < 0.9) {
+            } else if (value < 90) {
                 result = "Rig";
             } else {
                 result = "Right";
