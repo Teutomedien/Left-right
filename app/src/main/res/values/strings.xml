@@ -10,7 +10,7 @@
     <string name="Right_radio">Right</string>
     <string name="finalText">Middle</string>
     <string name="seekbarProgress">50</string>
-    <string name="edit_message">edit</string>
+    <string name="edit_message">Your Message</string>
     <string name="button_send">send</string>
     <string name="new_message">New Message</string>
     <string name="title_activity_new_message">newMessage</string>

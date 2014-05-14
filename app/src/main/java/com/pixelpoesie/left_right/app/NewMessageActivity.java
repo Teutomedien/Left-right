@@ -13,7 +13,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class NewMessageActivity extends Activity {
@@ -57,12 +59,11 @@ public class NewMessageActivity extends Activity {
 
         TextView tv = (TextView)findViewById(R.id.edit_message);
 
-        Time now = new Time();
+        Date now = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        String time = sdf.format(now);
 
-
-        Message myMessage = new Message(tv.getText().toString(), now,"Christoph", "Christoph");
-
-
+        Message myMessage = new Message(tv.getText().toString(), time ,"Christoph", "Christoph");
 
         list.add(myMessage.toString());
 
@@ -70,6 +71,6 @@ public class NewMessageActivity extends Activity {
 
         adapter.notifyDataSetChanged();
 
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, myMessage.getMsg_text(), Toast.LENGTH_SHORT).show();
     }
 }
