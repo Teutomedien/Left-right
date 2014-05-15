@@ -84,6 +84,7 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(newMessageIntent);
 
                 return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -93,6 +94,7 @@ public class MainActivity extends ActionBarActivity {
 
         TextView tv = (TextView)findViewById(R.id.finalText);
         tv.setText("Left");
+
     }
 
     public void setTextRight(View v){
